@@ -1,0 +1,42 @@
+{% extends 'master.html' %}
+{% block content %}
+<div class="card"  align="center" >
+  <div class="card-body" align="center">
+  <form method="get" class="form-group" >
+      <table align="center"  width="30%" height="25%">
+   {{ filter.form }}
+      </table>
+    <button type="submit" class="btn btn-outline-success" style="margin-left:%;align:center;" >Search</button>
+  </form>
+</div>
+</div>
+
+  <ul>
+<div class="row" style="margin-top:8%;margin-right:3%;">
+  {% for k in filter.qs %}
+    <div class="col-lg-3 col-md-4 col-12">
+<div class="card"  align="center">
+  <img class="card-img-top" src="{{k.image.url}}" alt="Card image cap" style="height:200px;">
+  <div class="card-body" align="center">
+
+<table border="0">
+        <tr class="btn2"><th>Id:</th><td>{{k.id}}</td></tr>
+        <tr class="btn2"><th>Name:</th><td >{{k.name}}</td></tr>
+        <tr class="btn2"><th>Father name:</th><td>{{k.father_name}}</td></tr>
+        <tr class="btn2"><th>Mother name:</th><td>{{k.mother_name}}</td></tr>
+        <tr class="btn2"><th>Age:</th><td>{{k.age}}</td></tr>
+        <tr class="btn2"><th>Mobile no:</th><td>{{k.mobile_no}}</td></tr>
+        <tr class="btn2"><th>State:</th><td>{{k.state}}</td></tr>
+        <tr class="btn2"><th>District:</th><td>{{k.district}}</td></tr>
+        <tr class="btn2"><th>City/Village:</th><td>{{k.city_or_village}}</td></tr>
+        <tr class="btn2"><th>PIN code:</th><td>{{k.PIN_code}}</td></tr>
+        <tr class="btn2"><th>Aadhaar no:</th><td>{{k.aadhaar_no}}</td></tr>
+        <tr class="btn2"><th>Description:</th><td>{{k.description}}</td></tr>
+        </table>
+  </div>
+</div>
+</div>
+  {% endfor %}
+</div>
+  </ul>
+{% endblock %}

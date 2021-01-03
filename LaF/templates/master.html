@@ -1,0 +1,70 @@
+{% load static %}
+<html lang="en">
+<head>
+  <title>Missing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/hover table.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/form.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+
+<body style="">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand" href="">Logo</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav" style="margin-left:5%;">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}">Home</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link"  href="{% url 'about' %}">About us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+    </li>
+
+    <!-- Dropdown 1-->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+        Lost people
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'lost_forms' %}">Lost people form</a>
+        <a class="dropdown-item" href="{% url 'lost_people' %}">Lost people details</a>
+        <a class="dropdown-item" href="{% url 'search_lost_people' %}">Lost people search</a>
+      </div>
+    </li>
+
+    <!-- Dropdown 2-->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="" id="" data-toggle="dropdown">
+        Find people
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'find_forms' %}">Find people form</a>
+        <a class="dropdown-item" href="{% url 'find_people' %}">Find people details</a>
+        <a class="dropdown-item" href="{% url 'search_find_people' %}">Find people search</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<br>
+
+<div class="container" >
+  <h3 >Navbar With Dropdown</h3>
+  <p>Welcome.</p>
+</div>
+
+{% block content %}
+{% endblock %}
+</body>
+</html>
+

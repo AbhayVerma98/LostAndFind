@@ -1,0 +1,20 @@
+{% extends 'master.html' %}
+
+{% block content %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for k in filter.qs %}
+    <li>
+        {{k.id}}<br>
+        {{k.name}}<br>
+        {{k.father_name}}<br>
+        {{k.mother_name}}<br>
+        {{k.age}}<br>
+        <img src="{{k.image.url}}"><br>
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'master.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+    {% if messages %}
+<ul class="message">
+	{% for message in messages %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+	{% endfor %}
+</ul>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+<div class="" style="width:80%;margin-left:15%;" align="center">
+<div class="form-style-2" align="left">
+<div class="form-style-2-heading">Provide your information</div>
+<form action="" method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token%}
+<label for="name"><span>Name </span><input type="text" class="input-field" name="name" value="" /></label>
+<label for="father_name"><span>Father's name </span><input type="text" class="input-field" name="father_name" value="" /></label>
+<label for="mother_name"><span>Mother's name </span><input type="text" class="input-field" name="mother_name" value="" /></label>
+<label for="age"><span>Age</span><select name="age" class="select-field" required>
+<option value="" >Select Age</option>
+<option value="'0-5">'0-5</option>
+<option value="6-10">6-10</option>
+    <option value="11-15">11-15</option>
+<option value="16-20">16-20</option>
+<option value="21-25">21-25</option>
+    <option value="26-30">26-30</option>
+<option value="31-35">31-35</option>
+<option value="36-40">36-40</option>
+    <option value="41-45">41-45</option>
+<option value="46-50">46-50</option>
+<option value="51-55">51-55</option>
+    <option value="56-60">56-60</option>
+<option value="61-65">61-65</option>
+<option value="66-70">66-70</option>
+    <option value="71-75">71-75</option>
+<option value="76-80">76-80</option>
+<option value="81-85">81-85</option>
+    <option value="86-90">86-90</option>
+<option value="91-95">91-95</option>
+<option value="96-100">96-100</option>
+
+</select></label>
+    <label><span>Address</span><input type="text" class="tel-number-field" name="state" value="" placeholder="State"required>-<input type="text" class="tel-number-field" name="district" value="" placeholder="District" required>-<input type="text" class="tel-number-field" name="city_or_village" value="" placeholder="City/Village" required>-<input type="text" class="tel-number-field" name="PIN_code" value="" maxlength="6" placeholder="PIN code" /></label>
+
+    <label for="mobile_no"><span>Mobile no </span><input type="number" class="input-field"name="mobile_no" value="" maxlength="10" placeholder="Mobile no" required></label>
+<label for="aadhaar_no"><span>Aadhaar no </span><input type="text" class="input-field" name="aadhaar_no" value="" maxlength="14" placeholder="Aadhaar no" /></label>
+
+   <label for="description"><span>Description </span><textarea name="description" class="textarea-field"></textarea></label>
+
+<label><span> </span><input type="submit" value="Submit" /></label>
+</form>
+</div>
+</div>
+
+
+
+
+
+{% endblock %}
